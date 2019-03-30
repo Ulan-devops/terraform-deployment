@@ -9,6 +9,7 @@ resource "kubernetes_secret" "vault_secret" {
   type = "Opaque"
 }
 resource "kubernetes_persistent_volume_claim" "vault_pvc" {
+  depends_on = ["kubernetes_secret.vault_secret"]
   metadata {
     name      = "vault-pvc"
     namespace = "tools"
@@ -83,6 +84,7 @@ resource "kubernetes_deployment" "vault" {
   }
 }
 resource "kubernetes_service" "vault_service" {
+  depends_on = ["kubernetes_deployment.vault"]
   metadata {
     name      = "vault-service"
     namespace = "tools"
