@@ -2,7 +2,7 @@
 
 This repo  deploy a Jenkins on Kubernetes cluster  using Terraform. Jenkins is a distributed automation server, generally associated with Continuous Integration (CI) and Continuous Delivery (CD). A Jenkins cluster typically involves one or more master instance(s) coupled with one or more slave instance(s)
 
-![](https://github.com/fuchicorp/kubernetes/blob/zin/Pictures/jenkins.png) ![](https://github.com/fuchicorp/kubernetes/blob/zin/Pictures/terraform-goodle.png)
+![](https://github.com/fuchicorp/terraform/blob/zin/google_jenkins/Pictures/jenkins.png) ![](https://github.com/fuchicorp/terraform/blob/zin/google_jenkins/Pictures/terraform-goodle.png)
 
 
 # We have created Terraform files to deploy terraform code:
