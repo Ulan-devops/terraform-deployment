@@ -4,7 +4,7 @@ resource "kubernetes_secret" "vault_secret" {
     namespace = "tools"
   }
   data {
-    password = "TVJYZ2tTeGZ0c2pqeUlqYkF4Nk9MS0Rmbgo="
+    token = "TVJYZ2tTeGZ0c2pqeUlqYkF4Nk9MS0Rmbgo="
   }
   type = "Opaque"
 }
@@ -70,7 +70,7 @@ resource "kubernetes_deployment" "vault" {
             value_from {
               secret_key_ref {
                 name = "vault-secret"
-                key  = "password"
+                key  = "token"
               }
             }
           }
