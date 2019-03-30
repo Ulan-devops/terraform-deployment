@@ -74,7 +74,7 @@ resource "kubernetes_deployment" "vault" {
           }
           volume_mount {
             name       = "vault-pvc"
-            mount_path = "/var/run/vault"
+            mount_path = "/var/run"
           }
         }
       }
