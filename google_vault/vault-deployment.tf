@@ -26,6 +26,7 @@ resource "kubernetes_persistent_volume_claim" "vault_pvc" {
   }
 }
 resource "kubernetes_deployment" "vault" {
+  depends_on = ["vault_secret"]
   metadata {
     name      = "vault"
     namespace = "tools"
