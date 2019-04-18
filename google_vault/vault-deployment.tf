@@ -65,6 +65,11 @@ resource "kubernetes_deployment" "vault" {
             container_port = 8200
             protocol       = "TCP"
           }
+          security_context {
+            capabilities {
+              add = ["IPC_LOCK"]
+            }
+          }
           env {
             name  = "VAULT_DEV_ROOT_TOKEN_ID"
             value_from {
