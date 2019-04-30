@@ -1,6 +1,6 @@
 resource "kubernetes_persistent_volume" "jira-pv" {
   metadata {
-    name = "terraform-jira"
+    name = "jira-pv"
   }
 
   spec {

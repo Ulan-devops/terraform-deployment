@@ -1,6 +1,6 @@
-resource "kubernetes_service" "jira-svs" {
+resource "kubernetes_service" "jira-service" {
   metadata {
-    name = "jira-svs"
+    name = "jira-service"
     namespace = "tools"
   }
 
