@@ -1,5 +1,0 @@
-mysql_user        =  "fscodinguser"
-mysql_password    =  "HtWCRLssgssQwWH"
-mysql_database    =  "dbfscoding"
-mysql_host        =  "fscoding-mysql"
-mysql_secret_key  =  "7hiuawef89hweafbi8921klnau"
