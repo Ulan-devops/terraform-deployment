@@ -9,10 +9,10 @@ resource "kubernetes_service" "jenkins-service" {
     port {
 
       protocol = "TCP"
-      port = 80
+      port = 8080
       target_port = 8080
     }
 
-    type = "LoadBalancer"
+    type = "NodePort"
   }
 }
