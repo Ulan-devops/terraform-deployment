@@ -12,7 +12,7 @@ resource "kubernetes_persistent_volume_claim" "nexus-pvc" {
     access_modes = ["ReadWriteOnce"]
     resources {
       requests {
-        storage = "10Gi"
+        storage = "20Gi"
       }
     }
     storage_class_name = "standard"
