@@ -10,18 +10,22 @@ variable "gcp_project_id" {
 
 variable "gcp_dns_zone" {
   default = "fuchicorp"
-  description = "Google Cloud zone name to create"	
+  description = "Google Cloud zone name to create"
 }
 
 
 variable "gcp_svc_acc" {
-  default = "/home/Mihai/config/data/account.json"
+  default = "/Users/fsadykov/.ssh/owner-fsadykov.json"
   description = "Google svc account"
 }
 
 variable "ip_domain" {
     description = "Fuchicorp domain IP"
-    default = "35.232.36.168"
-  
-}
+    default = "35.202.10.188"
 
+}
+variable "ip_bastion" {
+    description = "Fuchicorp Bastion Host IP"
+    default = "35.202.10.188"
+
+}

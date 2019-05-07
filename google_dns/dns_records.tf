@@ -9,15 +9,16 @@ resource "google_dns_record_set" "jenkins" {
   type = "A"
   ttl  = 300
 
-  rrdatas = ["${var.ip_domain}"] 
+  rrdatas = ["${var.ip_domain}"]
 }
+
 resource "google_dns_record_set" "nexus" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
   name = "nexus.${google_dns_managed_zone.fuchicorp.dns_name}"
   type = "A"
   ttl  = 300
 
-  rrdatas = ["${var.ip_domain}"] 
+  rrdatas = ["${var.ip_domain}"]
 }
 resource "google_dns_record_set" "grafana" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
@@ -25,7 +26,7 @@ resource "google_dns_record_set" "grafana" {
   type = "A"
   ttl  = 300
 
-  rrdatas = ["${var.ip_domain}"] 
+  rrdatas = ["${var.ip_domain}"]
 }
 resource "google_dns_record_set" "jira" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
@@ -33,7 +34,7 @@ resource "google_dns_record_set" "jira" {
   type = "A"
   ttl  = 300
 
-  rrdatas = ["${var.ip_domain}"] 
+  rrdatas = ["${var.ip_domain}"]
 }
 resource "google_dns_record_set" "vault" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
@@ -41,5 +42,14 @@ resource "google_dns_record_set" "vault" {
   type = "A"
   ttl  = 300
 
-  rrdatas = ["${var.ip_domain}"] 
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "bastion" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "bastion.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_bastion}"]
 }
