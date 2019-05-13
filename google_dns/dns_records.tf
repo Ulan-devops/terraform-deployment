@@ -45,6 +45,15 @@ resource "google_dns_record_set" "vault" {
   rrdatas = ["${var.ip_domain}"]
 }
 
+resource "google_dns_record_set" "docker" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "docker.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
 resource "google_dns_record_set" "bastion" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
   name = "bastion.${google_dns_managed_zone.fuchicorp.dns_name}"
