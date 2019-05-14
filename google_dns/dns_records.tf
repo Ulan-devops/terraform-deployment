@@ -72,3 +72,12 @@ resource "google_dns_record_set" "qa" {
 
   rrdatas = ["${var.ip_domain}"]
 }
+
+resource "google_dns_record_set" "prod" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "prod.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
