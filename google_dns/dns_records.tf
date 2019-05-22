@@ -3,6 +3,15 @@ resource "google_dns_managed_zone" "fuchicorp" {
   dns_name = "fuchicorp.com."
 }
 
+resource "google_dns_record_set" "fuchicorp" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
 resource "google_dns_record_set" "jenkins" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
   name = "jenkins.${google_dns_managed_zone.fuchicorp.dns_name}"
@@ -90,7 +99,6 @@ resource "google_dns_record_set" "prod" {
 
   rrdatas = ["${var.ip_domain}"]
 }
-
 resource "google_dns_record_set" "storage" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
   name = "storage.${google_dns_managed_zone.fuchicorp.dns_name}"
