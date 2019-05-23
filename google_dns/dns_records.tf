@@ -108,26 +108,26 @@ resource "google_dns_record_set" "storage" {
   rrdatas = ["${var.ip_domain}"]
 }
 
-resource "google_dns_record_set" "academic" {
+resource "google_dns_record_set" "academy" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
-  name = "academic.${google_dns_managed_zone.fuchicorp.dns_name}"
+  name = "academy.${google_dns_managed_zone.fuchicorp.dns_name}"
   type = "A"
   ttl  = 300
 
   rrdatas = ["${var.ip_domain}"]
 }
-resource "google_dns_record_set" "dev.academic" {
+resource "google_dns_record_set" "dev.academy" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
-  name = "dev.academic.${google_dns_managed_zone.fuchicorp.dns_name}"
+  name = "dev.academy.${google_dns_managed_zone.fuchicorp.dns_name}"
   type = "A"
   ttl  = 300
 
   rrdatas = ["${var.ip_domain}"]
 }
 
-resource "google_dns_record_set" "qa.academic" {
+resource "google_dns_record_set" "qa.academy" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
-  name = "qa.academic.${google_dns_managed_zone.fuchicorp.dns_name}"
+  name = "qa.academy.${google_dns_managed_zone.fuchicorp.dns_name}"
   type = "A"
   ttl  = 300
 
