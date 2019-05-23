@@ -116,7 +116,7 @@ resource "google_dns_record_set" "academy" {
 
   rrdatas = ["${var.ip_domain}"]
 }
-resource "google_dns_record_set" "dev.academy" {
+resource "google_dns_record_set" "devacademy" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
   name = "dev.academy.${google_dns_managed_zone.fuchicorp.dns_name}"
   type = "A"
@@ -125,7 +125,7 @@ resource "google_dns_record_set" "dev.academy" {
   rrdatas = ["${var.ip_domain}"]
 }
 
-resource "google_dns_record_set" "qa.academy" {
+resource "google_dns_record_set" "qaacademy" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
   name = "qa.academy.${google_dns_managed_zone.fuchicorp.dns_name}"
   type = "A"
