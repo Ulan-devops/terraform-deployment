@@ -134,3 +134,11 @@ resource "google_dns_record_set" "qaacademy" {
   rrdatas = ["${var.ip_domain}"]
 }
 
+resource "google_dns_record_set" "git_verification" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "_github-challenge-fuchicorp.fuchicorp.com."
+  type = "TXT"
+  ttl  = 300
+
+  rrdatas = ["${var.git_verification}"]
+}

@@ -1,3 +1,5 @@
+variable "git_verification" {}
+
 variable "gcp_region" {
   default = "us-east1-b"
   description = "The region to operate under"
