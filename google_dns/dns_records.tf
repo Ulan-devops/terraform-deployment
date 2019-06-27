@@ -108,7 +108,32 @@ resource "google_dns_record_set" "storage" {
 
   rrdatas = ["${var.ip_domain}"]
 }
+resource "google_dns_record_set" "api_platform" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "api.academy.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
 
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "dev_api_platform" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "dev.api.academy.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "qa_api_platform" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "qa.api.academy.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
 resource "google_dns_record_set" "academy" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
   name = "academy.${google_dns_managed_zone.fuchicorp.dns_name}"
