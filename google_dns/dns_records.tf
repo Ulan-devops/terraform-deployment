@@ -1,6 +1,7 @@
 resource "google_dns_managed_zone" "fuchicorp" {
   name     = "fuchicorp"
   dns_name = "fuchicorp.com."
+  project = "${var.gcp_project_id}"
 }
 
 resource "google_dns_record_set" "fuchicorp" {

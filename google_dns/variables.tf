@@ -1,12 +1,12 @@
 variable "git_verification" {}
 
 variable "gcp_region" {
-  default = "us-east1-b"
+  default = "us-central1"
   description = "The region to operate under"
 }
 
 variable "gcp_project_id" {
-  default = "my-project-1534569626996"
+  default = "fuchicorp-project"
   description = "GCP project targeted"
 }
 
@@ -17,7 +17,7 @@ variable "gcp_dns_zone" {
 
 
 variable "gcp_svc_acc" {
-  default = "/Users/fsadykov/.ssh/owner-fsadykov.json"
+  default = "./dns-manager.json"
   description = "Google svc account"
 }
 
