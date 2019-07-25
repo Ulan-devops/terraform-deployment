@@ -3,17 +3,14 @@ resource "kubernetes_persistent_volume_claim" "jira-pvc" {
     name      = "jira-pvc"
     namespace = "${var.namespace}"
 
-    labels {
-      app = "jira-deployment"
-    }
+    labels { app = "jira-deployment" }
   }
 
   spec {
     access_modes = ["ReadWriteOnce"]
 
     resources {
-      requests {
-        storage = "10Gi"
+      requests { storage = "10Gi"
       }
     }
 
@@ -26,9 +23,7 @@ resource "kubernetes_deployment" "jira-deployment" {
     name      = "jira-deployment"
     namespace = "${var.namespace}"
 
-    labels {
-      app = "jira-deployment"
-    }
+    labels { app = "jira-deployment" }
   }
 
   spec {
@@ -42,9 +37,7 @@ resource "kubernetes_deployment" "jira-deployment" {
 
     template {
       metadata {
-        labels {
-          app = "jira-deployment"
-        }
+        labels { app = "jira-deployment" }
       }
 
       spec {

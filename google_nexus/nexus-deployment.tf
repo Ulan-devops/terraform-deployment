@@ -3,17 +3,13 @@ resource "kubernetes_persistent_volume_claim" "nexus-pvc" {
     name      = "nexus-pvc"
     namespace = "${var.namespace}"
 
-    labels {
-      app = "nexus-deployment"
-    }
+    labels { app = "nexus-deployment" }
   }
 
   spec {
     access_modes = ["ReadWriteOnce"]
     resources {
-      requests {
-        storage = "20Gi"
-      }
+      requests { storage = "20Gi" }
     }
     storage_class_name = "standard"
   }
@@ -23,9 +19,7 @@ resource "kubernetes_deployment" "nexus-deployment" {
     name      = "nexus-deployment"
     namespace = "${var.namespace}"
 
-    labels {
-      app = "nexus-deployment"
-    }
+    labels { app = "nexus-deployment" }
   }
   spec {
     replicas = 1
@@ -38,9 +32,7 @@ resource "kubernetes_deployment" "nexus-deployment" {
 
     template {
       metadata {
-        labels {
-          app = "nexus-deployment"
-        }
+        labels { app = "nexus-deployment" }
       }
 
       spec {
@@ -105,9 +97,7 @@ resource "kubernetes_service" "nexus-service" {
       port        = 8085
       target_port = 8085
     }
-    selector {
-      app = "nexus-deployment"
-    }
+    selector { app = "nexus-deployment" }
     type = "LoadBalancer"
   }
 }

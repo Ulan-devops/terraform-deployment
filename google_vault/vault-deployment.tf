@@ -18,9 +18,7 @@ resource "kubernetes_persistent_volume_claim" "vault_pvc" {
     name      = "vault-pvc"
     namespace = "${var.namespace}"
 
-    labels {
-      app = "vault-deployment"
-    }
+    labels { app = "vault-deployment" }
   }
 
   spec {
@@ -50,16 +48,12 @@ resource "kubernetes_deployment" "vault" {
     replicas = 1
 
     selector {
-      match_labels {
-        app = "vault-deployment"
-      }
+      match_labels { app = "vault-deployment" }
     }
 
     template {
       metadata {
-        labels {
-          app = "vault-deployment"
-        }
+        labels { app = "vault-deployment" }
       }
 
       spec {
@@ -116,9 +110,7 @@ resource "kubernetes_service" "vault_service" {
   }
 
   spec {
-    selector {
-      app = "vault-deployment"
-    }
+    selector { app = "vault-deployment" }
 
     port {
       protocol    = "TCP"

@@ -4,9 +4,7 @@ resource "kubernetes_namespace" "tools" {
       name = "jira-annotation"
     }
 
-    labels {
-      mylabel = "jira-value"
-    }
+    labels { mylabel = "jira-value" }
 
     name = "jira-ns"
   }
