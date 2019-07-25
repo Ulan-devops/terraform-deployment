@@ -1,7 +1,7 @@
 terraform {
   backend "gcs" {
-    bucket  = "fuchicorp"
+    bucket  = "fuchicorp-bucket"
     prefix  = "tools/dns-manager"
-    project = ""
+    project = "universal-team-245120"
   }
 }

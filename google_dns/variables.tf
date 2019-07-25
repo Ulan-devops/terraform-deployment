@@ -5,7 +5,7 @@ variable "gcp_region" {
   description = "The region to operate under"
 }
 
-variable "gcp_project_id" {
+variable "project" {
   default = "fuchicorp-project"
   description = "GCP project targeted"
 }
@@ -16,7 +16,7 @@ variable "gcp_dns_zone" {
 }
 
 
-variable "gcp_svc_acc" {
+variable "credentials" {
   default = "./dns-manager.json"
   description = "Google svc account"
 }
