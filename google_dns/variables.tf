@@ -17,7 +17,7 @@ variable "gcp_dns_zone" {
 
 
 variable "credentials" {
-  default = "./dns-manager.json"
+  default = "/Users/fsadykov/fuchicorp-service-account.json"
   description = "Google svc account"
 }
 
