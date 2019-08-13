@@ -6,7 +6,7 @@ variable "gcp_region" {
 }
 
 variable "project" {
-  default = "fuchicorp-project"
+  default = "fuchicorp-project-248118"
   description = "GCP project targeted"
 }
 
@@ -23,11 +23,11 @@ variable "credentials" {
 
 variable "ip_domain" {
     description = "Fuchicorp domain IP"
-    default = "35.202.10.188"
+    default = "35.184.138.252"
 
 }
 variable "ip_bastion" {
     description = "Fuchicorp Bastion Host IP"
-    default = "35.202.10.188"
+    default = "35.230.53.125"
 
 }
