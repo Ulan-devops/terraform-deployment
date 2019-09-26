@@ -168,3 +168,102 @@ resource "google_dns_record_set" "git_verification" {
 
   rrdatas = ["${var.git_verification}"]
 }
+
+resource "google_dns_record_set" "cloud" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "cloud.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "devcloud" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "dev.cloud.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "qacloud" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "qa.cloud.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "artemis" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "artemis.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "devartemis" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "dev.artemis.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "qaartemis" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "qa.artemis.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "exam" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "exam.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "devexam" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "dev.exam.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "qaexam" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "qa.exam.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "test_jenkins" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "test-jenkins.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}
+
+resource "google_dns_record_set" "demo-artemis" {
+  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
+  name = "demo-artemis.${google_dns_managed_zone.fuchicorp.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  rrdatas = ["${var.ip_domain}"]
+}

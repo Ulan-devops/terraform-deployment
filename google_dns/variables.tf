@@ -28,6 +28,6 @@ variable "ip_domain" {
 }
 variable "ip_bastion" {
     description = "Fuchicorp Bastion Host IP"
-    default = "35.230.53.125"
+    default = "35.193.178.1"
 
 }
