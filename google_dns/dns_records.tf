@@ -250,18 +250,10 @@ resource "google_dns_record_set" "qaexam" {
   rrdatas = ["${var.ip_domain}"]
 }
 
-resource "google_dns_record_set" "test_jenkins" {
-  managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
-  name = "test-jenkins.${google_dns_managed_zone.fuchicorp.dns_name}"
-  type = "A"
-  ttl  = 300
 
-  rrdatas = ["${var.ip_domain}"]
-}
-
-resource "google_dns_record_set" "demo-artemis" {
+resource "google_dns_record_set" "old_jenkins" {
   managed_zone = "${google_dns_managed_zone.fuchicorp.name}"
-  name = "demo-artemis.${google_dns_managed_zone.fuchicorp.dns_name}"
+  name = "old-jenkins.${google_dns_managed_zone.fuchicorp.dns_name}"
   type = "A"
   ttl  = 300
 
