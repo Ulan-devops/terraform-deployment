@@ -1,7 +1,7 @@
 terraform {
   backend "gcs" {
-    bucket  = "fuchicorp-bucket"
+    bucket  = "farrukh-bucket"
     prefix  = "tools/dns-manager"
-    project = "fuchicorp-project-88"
+    project = "farrukh-project-88"
   }
 }
